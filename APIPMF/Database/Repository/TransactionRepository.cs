@@ -13,7 +13,7 @@ namespace APIPMF.Database.Repository
 
         public async Task<TransactionEntity> Create(TransactionEntity transaction)
         {
-            _dbContext.Add(transaction);
+            _dbContext.Transactions.Add(transaction);
 
             await _dbContext.SaveChangesAsync();
 

@@ -12,7 +12,7 @@ namespace APIPMF.Services
             _transactionRepository = transactionRepository;
         }
 
-        public Task<Transaction> importTransaction(Transaction transaction)
+        public Task<Transaction> importTransaction(Transaction  transaction)
         {
             Task<Transaction> transaction2 = _transactionRepository.Create(transaction);
             return transaction2;

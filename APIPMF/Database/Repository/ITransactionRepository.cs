@@ -8,6 +8,6 @@ namespace APIPMF.Database.Repository
         Task<TransactionEntity> GetAll();
 
         Task<TransactionEntity> Create(TransactionEntity transaction);
-
+        Task<Transaction> Create(Transaction transaction);
     }
 }

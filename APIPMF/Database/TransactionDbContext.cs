@@ -6,18 +6,21 @@ namespace APIPMF.Database.Repository
 {
     public class TransactionDbContext : DbContext
     {
+        public DbSet<TransactionEntity> Transactions { get; set; }
+
         public TransactionDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        protected TransactionDbContext()
+        public TransactionDbContext()
         {
         }
 
-        public DbSet<TransactionEntity> Transactions { get; set; }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            AppContext.SetSwitch("Npqsql.EnableLegacyTimestampBehaviour ", true);
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
